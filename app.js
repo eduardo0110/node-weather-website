@@ -9,7 +9,7 @@ const forecast = require('./utils/forecast.js')
 const hbs = require('hbs');
 const partialsPath = path.join(__dirname, '/templates/partials');
 const viewPath = path.join(__dirname, '/templates/views');
-
+const port = process.env.PORT || 3000;
 
 
 app.use(express.static("public"));
@@ -82,6 +82,6 @@ app.get('*' , (req , res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log("server up and running")
+app.listen(port, () => {
+    console.log(`server up and running on ${port} `)
 })
